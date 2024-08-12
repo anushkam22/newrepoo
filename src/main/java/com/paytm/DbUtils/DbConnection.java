@@ -28,6 +28,20 @@ public class DbConnection {
 		
 	}
 	
+	public void getConnectiongfromdb(String url, String password) throws Throwable
+	{
+		try {
+			Driver driver = new Driver();
+              DriverManager.registerDriver(driver);
+              con = DriverManager.getConnection(url,username,password);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("not connected");
+		}
+		
+	}
+	
 	
 	public ResultSet createQuery(String query) throws Throwable {
 		
